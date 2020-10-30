@@ -111,4 +111,6 @@ SELECT artName FROM Artist
 INNER JOIN CD on Artist.artID = CD.artID
 GROUP BY artName HAVING AVG(CD.cdPrice) > MIN(CD.cdPrice);
 
+SELECT Artist.artName, AVG(CD.cdPrice) 
+FROM Artist JOIN CD ON Artist.artID = CD.artID GROUP BY Artist.artName ORDER BY 2 DESC LIMIT 100;
 
